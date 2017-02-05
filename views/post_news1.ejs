@@ -1,0 +1,29 @@
+<% include header %>
+<body>
+	<form method="post" action="post_news" enctype="multipart/form-data">
+		<div>
+			<label>标题</label>
+			<input type="text" name="title"></input>
+		</div>
+		<div>
+			<label>简介</label>
+			<textarea type="text"  rows="10" name="info"></textarea>
+		</div>
+		<div>
+			<label>URL</label>
+			<input type="text" name="urls"></input>
+		</div>
+		<div>
+			<label>时间</label>
+			<input type="date" name="time"></input>
+		</div>
+		<div>
+			<label>请选择封面</label>
+			<input type="file" name="images">
+		</div>
+		<input type="submit" value="提交"></input>
+	</form>
+
+</body>
+
+<% include footer %>

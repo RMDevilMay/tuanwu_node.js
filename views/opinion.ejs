@@ -1,0 +1,30 @@
+<% include header %>
+<body class="body-bg1">
+    <div class="main">
+        <div class="main-content">
+            <div class="form">
+                <h1>
+                    <%= title %>
+                </h1>
+                <form action="opinion" method="post" enctype="multipart/form-data">
+                    <ul>
+                        <!-- <li>
+                            <i class="iconfont color-cheng">&#xe60e;</i>
+                            <input type="text" placeholder="请输入姓名">
+                        </li> -->
+                        <li>
+                            <i class="iconfont color-zi">&#xe614;</i>
+                            <input type="text" name="contact" placeholder="请输入联系方式">
+                        </li>
+                        <li>
+                            <i class="iconfont color-lan">&#xe602;</i>
+                            <input type="text" name="info" placeholder="请输入你的意见或者建议">
+                            <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+                        </li>
+                    </ul>
+                    <input type="submit" value="继续">
+                </form>
+            </div>
+        </div>
+    </div>
+<% include footer %>

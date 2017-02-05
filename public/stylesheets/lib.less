@@ -1,0 +1,210 @@
+@charset "utf-8";
+
+// 前缀
+.prefix(@style; @value){
+    -webkit-@{style}: @value;
+       -moz-@{style}: @value;
+        -ms-@{style}: @value;
+         -o-@{style}: @value;
+            @{style}: @value;
+}
+
+// 目录
+// ◆◆ 全局变量
+// ◆◆ CSS清零样式
+
+// ◆◆ 常用样式
+// ◆◆ 宽全屏
+// ◆◆ div居中
+// ◆◆ margin居中
+// ◆◆ 绝对定位，块级化宽高百分百，适用于遮罩、块级链接
+// ◆◆ border 1px red（用于测试）
+// ◆◆ 浮动
+// ◆◆ 清除浮动
+// ◆◆ 透明度（兼容IE）
+// ◆◆ 输入框聚焦发光
+
+// 需要加浏览器前缀的属性
+// ◆◆ border-radius  圆角
+// ◆◆ box-sizing  盒子大小
+// ◆◆ box-shadow  盒子阴影
+// ◆◆ text-shadow  文字阴影
+
+// ◆◆ transition 属性过渡
+
+// ◆◆ transform  形变
+// ◆◆ transform:rotate  形变 ———— 旋转
+// ◆◆ transform:translate  形变 ———— 移动
+// ◆◆ transform:scale  形变 ———— 旋转
+// ◆◆ transform:skew  形变 ———— 扭曲
+// ◆◆ transform:matrix  形变 ———— 矩阵
+// ◆◆ transform-origin  形变 ———— 形变基准点
+
+// 多种形变需要写到同个transform里面，否则只有最后一个才会效，例如：transform: skew(180deg) skew(100deg);
+
+// ************************************************* 分割线 *************************************************
+
+// ◆◆ 全局变量
+/*@main_font: '宋体',Regular,'微软雅黑',Tahoma,Arial,sans-serif;	// html字体样式*/
+@main_font: "Helvetica Neue",Helvetica,Microsoft Yahei,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;	// html字体样式
+@main_fs: 16px;	//html字体大小
+@main_color: #666666; // html主色调
+@a_color: #666666;	// a链接默认颜色
+@main_width: 1200px;	// 网页居中宽度
+
+// ************************************************* 分割线 *************************************************
+
+// ◆◆ 绝对定位，块级化宽高百分百，适用于遮罩、块级链接
+.all_block(){
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+// ◆◆ border 1px red（用于测试）
+.b(@a: red; @b: 1px){
+	border: @b solid @a;
+}
+
+// ◆◆ 浮动
+.fl(@fl:left){
+	float: @fl;
+	display: inline;
+}
+.fr(@fl:right){
+	float: @fl;
+	display: inline;
+}
+
+// ◆◆ 清除浮动
+.clearfix(){
+	&:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+	zoom: 1;
+}
+
+// ◆◆ 透明度（兼容IE）
+.opacity(@a: 0.8) {
+	@ie6_a: (@a * 100);
+
+	opacity: @a;
+	filter: ~'alpha(opacity=@{ie6_a})';
+}
+
+// ◆◆ 输入框聚焦发光，用法如下：
+//	input:focus{
+//		.input_shadow;
+//	}
+.input_shadow(@a: 0px 0px 10px #CBD1FF){
+	.box-shadow(@a);
+}
+// ************************************************* 分割线 *************************************************
+
+// ◆◆ border-radius  圆角
+.border-radius(@a:50%){
+	.prefix(border-radius; @a);
+}
+
+// ◆◆ box-sizing  盒子大小
+.box-sizing(@a: border-box){
+	.prefix(box-sizing; @a);
+}
+
+// ◆◆ box-shadow  盒子阴影
+.box-shadow(@a:4px 4px 3px #CCC){
+	.prefix(box-shadow; @a);
+}
+
+// ◆◆ text-shadow  文字阴影
+.text-shadow(@a:4px 4px 3px #CCC){
+	.prefix(text-shadow; @a);
+}
+
+// ◆◆ transition 属性过渡
+.transition(@a:all .2s ease-in-out){
+	.prefix(transition; @a);
+}
+
+// ◆◆ transform  形变
+// ◆◆ transform:rotate  形变 ———— 旋转
+.rotate(@a:180deg){
+	.prefix(transform; rotate(@a));
+}
+
+// ◆◆ transform:translate  形变 ———— 移动
+.translate(@a:10px; @b:10px){
+	.prefix(transform; translate(@a, @b));
+}
+
+// ◆◆ transform:scale  形变 ———— 缩放
+.scale(@a:2; @b:2){
+	.prefix(transform; scale(@a, @b));
+}
+
+// ◆◆ transform:skew  形变 ———— 扭曲
+.skew(@a: 10deg){
+	.prefix(transform; skew(@a));
+}
+
+// ◆◆ transform:matrix  形变 ———— 矩阵
+.matrix(@a:1; @b:1; @c:-1; @d:0; @e:0; @f:0){
+	.prefix(transform; matrix(@a, @b, @c, @d, @e, @f));
+}
+
+// ◆◆ transform-origin  形变 ———— 形变基准点
+.transform-origin(@a: center center){
+	.prefix(transform-origin; @a);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

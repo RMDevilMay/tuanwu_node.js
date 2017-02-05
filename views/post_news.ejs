@@ -1,0 +1,46 @@
+<% include header %>
+<body class="body-bg1">
+    <div class="main">
+        <div class="main-content">
+            <div class="form">
+                <h1>
+                    <q>
+                       <%= title %>
+                    </q>
+                </h1>
+                <form  method="post" action="post_news" enctype="multipart/form-data">
+                    <ul>
+                        <li>
+                            <i class="iconfont color-lan">&#xe61e;</i>
+                            <input name="title" type="text" placeholder="请输入标题">
+                        </li>
+                        <li>
+                            <i class="iconfont color-huang">&#xe602;</i>
+                            <input name="info" type="text" placeholder="请输入简介">
+                        </li>
+                        <li>
+                            <i class="iconfont color-cheng">&#xe60e;</i>
+                            <input name="urls" type="text" placeholder="请输入新闻链接">
+                        </li>
+                        <li>
+                            <i class="iconfont color-cheng">&#xe60e;</i>
+                            <input name="time" type="date" placeholder="请输入时间">
+                        </li>
+                        <li>
+                            <i class="iconfont color-zi">&#xe614;</i>
+                            <input name="contact" type="text" placeholder="请输入联系方式">
+                        </li>
+
+
+                        <li>
+                            <i class="iconfont color-fen">&#xe617;</i>
+                            <input type="text" name="upfile" id="upfile" class="file-name" readonly onclick="path.click()" placeholder="上传新闻封面">
+                            <input type="file" id="path" onchange="upfile.value=this.value" name="images">
+                        </li>
+                    </ul>
+                    <input type="submit" value="继续">
+                </form>
+            </div>
+        </div>
+    </div>
+<% include footer %>

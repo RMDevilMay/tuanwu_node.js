@@ -1,0 +1,1 @@
+1、运行run_hot_server.bat可热更新逻辑功能，但render之后的页面读取不到静态文件，如果要render之后的页面能正常读取静态文件，则使用run_hot_server.bat，使用run_server.bat。
